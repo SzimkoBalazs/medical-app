@@ -44,3 +44,8 @@ export const api = axios.create({
     const response = await api.post('/doctor/allDoctorsFromTown', { townId });
     return response.data;
   };
+
+  export const getAllBookingsForADoctor = async (doctorId) => {
+    const response = await api.post('/booking/getAllBookingsFromADoctor', { doctorId });
+    return response.data;
+  };
