@@ -13,9 +13,11 @@ const BookingPage = () => {
   const { data, isError, isLoading, refetch } = useTowns();
   const [selectedTown, setSelectedTown] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState("");
-  const [selectedDateAndTime, setSelectedDateAndTime] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState();
+  const [selectedTime, setSelectedTime] = useState();
 
-  console.log(selectedDateAndTime);
+
+  console.log(selectedDate);
   const { data: doctorsData, isLoading: isLoadingDoctors } = useDoctors(selectedTown);
   const { data: doctorBookingsData, isLoading: isLoadingdoctorBookingsData } = useBookingsForADoctor(selectedDoctor);
 
@@ -58,6 +60,22 @@ const BookingPage = () => {
     customTimes.push(setHours(setMinutes(new Date(), 30), i)); 
   }
 
+  const bookingDates = doctorBookingsData ? doctorBookingsData.map(booking => booking.date) : [];
+  console.log(bookingDates[0]);
+  const dates = bookingDates.map(date => new Date(date));
+  console.log(dates);
+
+  const getExcludedDates = (bookingDates) => {
+    console.log("i have run")
+  }
+
+  const getExcludedTimes = (bookingDates) => {
+    let bookedTimesToday = [{}]
+  bookingDates.forEach(bookedDate => {
+    
+    });
+  }
+
   return (
     <div className='h-screen'>
     <Select options={options} onChange={handleTownChange} placeholder={"Select a town"}/>
@@ -65,14 +83,24 @@ const BookingPage = () => {
     <Select options={doctorOptions} onChange={handleDoctorChange} isDisabled={!selectedTown || isLoadingDoctors} placeholder={"Select a doctor"}/>
 
       <DatePicker
-      showTimeSelect
-      selected={selectedDateAndTime}
-      onChange={(date) => setSelectedDateAndTime(date)}
+      selected={selectedDate}
+      onChange={(date) => setSelectedDate(date)}
       timeClassName={handleColor}
+      minDate={new Date()}
+      dateFormat="dd/MM/yyy"
+      disabled={!selectedDoctor}
+      excludeDates={getExcludedDates(bookingDates)}
+    /> 
+    <DatePicker
+      showTimeSelect
+      showTimeSelectOnly
+      selected={selectedTime}
+      onChange={(date) => setSelectedTime(date)}
+      excludeTimes={getExcludedTimes(bookingDates)}
       minTime={setHours(setMinutes(new Date(), 0), 7)} 
       maxTime={setHours(setMinutes(new Date(), 0), 14)} 
       dateFormat="MMMM d, yyyy h:mm aa"
-      disabled={!selectedDoctor}
+      disabled={!selectedDate}
     /> 
     </div>
   );
