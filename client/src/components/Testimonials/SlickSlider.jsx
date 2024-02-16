@@ -58,8 +58,10 @@ const settings = {
 
                        {/* Lower side */}
                        <div className="c-info">
+                        <div className="avatar-container">
                         <div className="c-avatar">
                             {comment.name[0]}
+                        </div>
                         </div>
                         <div className="c-person">
                             <span>{comment.name}</span>

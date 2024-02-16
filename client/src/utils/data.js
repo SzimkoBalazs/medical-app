@@ -33,109 +33,110 @@ export const HeroData = [
 
 export const features = [
   {
-    icon: "/features/Frame-0.png",
-    title: "3x monthly revenue",
+    icon: "/features/cloud.png",
+    title: "Seamless Integration",
   },
   {
-    icon: "/features/Frame-1.png",
-    title: "Flat fee of 6-12%",
+    icon: "/features/private-account.png",
+    title: "Accessibility for All",
   },
   {
-    icon: "/features/Frame-2.png",
-    title: "Flexible repayments by revenue share",
+    icon: "/features/calendar.png",
+    title: "Advanced Scheduling",
   },
   {
-    icon: "/features/Frame-3.png",
-    title: "3-4 years repayment",
+    icon: "/features/heart.png",
+    title: "Personalized Care Journey",
   },
   {
-    icon: "/features/Frame-4.png",
-    title: "$10-100k seed investment",
+    icon: "/features/approved.png",
+    title: "Immediate Confirmations",
   },
   {
-    icon: "/features/Frame-5.png",
-    title: "2% of revenue up to 3X cap",
+    icon: "/features/medical-report.png",
+    title: "Healthcare at Your Fingertips",
   },
 ];
 
 export const ourDiffFeatures = [
   {
     icon: "/OurDiff/Frame-0.png",
-    title: "Data Driven",
-    des: "Our mission is to level the playing field for early stage growth capital. We provide capital that is unbiased, flexible and non dilutive with the execution support to accelerate value creation",
+    title: "Precision Health Matching",
+    des: "Our smart algorithms ensure you find the right specialist, leading to better outcomes and personalized care paths",
   },
   {
     icon: "/OurDiff/Frame-1.png",
-    title: "flexible funding",
-    des: "Funding that flexes as revenue grows with transparent costs and does not require dilution, personal guarantees or pitch decks",
+    title: "Empowered Financing",
+    des: "Our model ensures you get the care you need without the stress of traditional payment systems",
   },
   {
     icon: "/OurDiff/Frame-2.png",
-    title: "value accelerating",
-    des: "On demand expertise to supercharge growth in areas that are hard to access for early stage founders",
+    title: "Strategic Health Insights",
+    des: "With MediVisit, harness the potential of analytics to understand treatment impacts, make informed decisions, and embark on a journey towards optimal well-being",
   },
 ];
 
 export const hitFeatures = [
   {
-    icon: "/howItWorks/Frame-0.png",
-    title: "Connect",
-    des: "Register and qualify for funding in less than 5 mins. Connect revenue and marketing platforms you already use.",
+    icon: "/howItWorks/login.png",
+    title: "Start Your Journey",
+    des: "Sign up effortlessly using your preferred social accounts or email.",
   },
   {
-    icon: "/howItWorks/Frame-1.png",
-    title: "Get Funded",
-    des: "Get a term sheet with upto 3 funding offers. Select option that best suits and complete onboarding to receive funds in days",
+    icon: "/howItWorks/steth.png",
+    title: "Choose Your Healthcare",
+    des: "Find the perfect doctor in your town with our user-friendly search tool",
   },
   {
-    icon: "/howItWorks/Frame-2.png",
-    title: "Support Growth",
-    des: "Access curated feed of actionable insights and on demand execution expertise. Auto qualify for follow on funding as you grow",
+    icon: "/howItWorks/subscribe.png",
+    title: "Subscribe",
+    des: "Benefit from ongoing health insights and resources by subscribing to our newsletter",
   },
 ];
 
-export const whoWeInvest = [
+export const ourGoals = [
   {
-    title: "Digital Business Model",
-    des: "Digital business model e.g. SaaS, subscription, D2C, apps",
+    title: "Leveraging the Latest in Health Tech",
+    des: "MediVisit is at the forefront of digital healthcare innovation. Our platform is built on a robust, scalable digital business model",
   },
   {
-    title: "Revenue Generating",
-    des: "Revenue generating for 6 months, > $1k in monthly recurring revenue",
+    title: "Sustaining Care through Innovation",
+    des: "Financial health enables us to provide better services",
   },
   {
-    title: "Support Growth",
-    des: "Industry expertise: Fintech, Health, Deep tech, B2B software",
+    title: "Expertise Fueling Healthcare Advancement",
+    des: "Our industry expertise spans fintech, health, and deep tech, with a focus on B2B software solutions that support growth",
   },
   {
-    title: "International Expansion",
-    des: "Registered in Australia and Singapore (initially) with appetite for international expansion",
+    title: "Global Ambitions, Local Impact",
+    des: "Initially registered in Slovakia and Singapore, MediVisit is poised for international expansion, our vision extends beyond borders",
   },
 ];
 
 export const testimonialsData = [
   {
     comment:
-      "SUPER HAPPY! Not only do you get to see the best seed and Early Stage companies but the exciting part is there’s a bunch of investors",
+      "Finding the right doctor used to be a struggle for me, but thanks to MediVisit, I can easily schedule appointments with top professionals.",
     name: "Zach Lee",
-    profession: "QA specialist, Matrix architect",
+    profession: "QA specialist, HealthTech Enthusiast",
   },
   {
     comment:
-      "I have been working with Chatgpt on our fundraising strategies. They understands the in depth strategies of Venture Capital and early stage fund raising/company",
+      "As a founder in the healthcare space, the support from MediVisit in navigating the complexities of appointments and patient interactions has been invaluable. ",
     name: "Cheryl R. Weiss",
-    profession: "Founder, Dubrow Cafeteria",
+    profession: "Healthcare Startup Founder",
   },
   {
     comment:
-      "Another masterpiece really digging into the art of venture funds, portfolio construction and deal mechanics! Loved it - I can say without hesitation that it is incredibly valuable for anyone who is investing",
+      "MediVisit's platform is a game-changer for both practitioners and patients. It's not just about booking an appointment—it's about managing healthcare efficiently.",
     name: "Vicky R. Lane",
-    profession: "Directork, Lafayette Radio",
+    profession: "Healthcare Director",
   },
   {
     comment:
-      "BlueVenture is the premier setting for entrepreneurs and investors alike to exchange ideas, and network. As an entrepreneur, I can rely on the BlueVenture to bring top caliber speakers, entrepreneurs and investors",
+      "The network and connections MediVisit offers are unparalleled. It's more than a booking site; it's a community where health professionals and patients come together for better health outcomes.",
     name: "Jennifer Dubois",
-    profession: "Manager, China Coast",
+    profession: "Healthcare Operations Manager",
   },
 ];
+

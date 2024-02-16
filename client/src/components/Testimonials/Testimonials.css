@@ -1,5 +1,6 @@
 .t-wrapper .container{
     padding-top: 13rem;
+    padding-bottom: 5rem;
 }
 
 .t-container{
@@ -23,6 +24,7 @@ align-items: center;
 
 .slick-track{
     padding: 4rem 0rem;
+    
 }
 
 .slick-slide > div{
@@ -40,7 +42,9 @@ align-items: center;
     position: relative;
     box-sizing: border-box;
     padding: 2rem;
+   
     gap: 3rem;
+    
 }
 
 .c-content{

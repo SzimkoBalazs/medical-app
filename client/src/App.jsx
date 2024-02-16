@@ -8,7 +8,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import UserDetailContext from './context/UserDetailContext';
-import TrialBookingPage from './pages/TrialBookingPage.jsx/TrialBookingPage';
+import MyBookings from './pages/MyBookings/MyBookings';
+import BookingPageOld from './pages/BookingPageOld/BookingPageOld';
 
 
 
@@ -32,7 +33,8 @@ function App() {
       <Route element={<Layout/>}>
         <Route path='/' element={<Website/>}/>
         <Route path='/booking' element={<BookingPage/>}/>
-        <Route path='/trial' element={<TrialBookingPage/>}/>
+        <Route path='/myBookings' element={<MyBookings/>}/>
+        <Route path='/trial' element={<BookingPageOld/>}/>
        </Route>
     </Routes>
     </Suspense>

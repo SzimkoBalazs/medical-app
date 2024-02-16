@@ -25,6 +25,10 @@ model Town {
 model Doctor {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   name    String
+  docType String
+  clinic  String
+  adress  String
+  prax    String
   townId  String   @db.ObjectId
   town    Town     @relation(fields: [townId], references: [id])
   bookings Booking[]
@@ -34,7 +38,8 @@ model Booking {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   doctorId  String   @db.ObjectId
   userId    String   @db.ObjectId
-  date      DateTime
+  date      DateTime 
+  isActive  Boolean  @default(true)
   doctor    Doctor   @relation(fields: [doctorId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
 }

@@ -10,7 +10,7 @@ const Testimonials = () => {
                 {/* Head */}
                 <div className="t-head">
                     <span className='tag'>Testimonials</span>
-                    <span className='title'>Som placeholder text Until I’m We </span>
+                    <span className='title'>Your Opinion Matters</span>
                     <span className="description">What people say about us</span>
                 </div>
             </div>

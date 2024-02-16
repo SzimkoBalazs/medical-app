@@ -99,6 +99,25 @@
     line-height: 2rem;
 }
 
+.fund-button {
+    color: var(--dark-bg);
+    background-color: var(--third-color);
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border-radius: 999px;
+   
+}
+
+.book-button {
+    color: var(--dark-bg);
+    background-color: var(--third-color);
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border-radius: 999px;
+}
+
 @media (max-width: 1024px) {
     .h-wrapper{
         height: max-content;

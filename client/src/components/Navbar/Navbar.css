@@ -3,6 +3,11 @@
     width: 100%;
     position: absolute;
     z-index: 999;
+    
+}
+
+.container{
+    overflow: visible;
 }
 
 .sticky{
@@ -55,7 +60,7 @@
 .fund-button {
     color: var(--dark-bg);
     background-color: var(--third-color);
-    padding: 1rem 1.6rem;
+    padding: 0.5rem 2rem;
     font-size: 1rem;
     text-transform: capitalize;
     border-radius: 999px;
@@ -65,7 +70,39 @@
     display: none;
 }
 
+.avatar-container {
+    text-align: center;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .n-container .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #DDD;
+    
+  }
+
+  .profile-menu {
+    position: absolute;
+    top: 100%; /* Position it below the avatar container */
+    right: 0; /* Align it to the right edge of the avatar container */
+    z-index: 1000; /* Make sure it stacks on top of other content */
+    /* Add any other styles for box shadow, background, etc. here */
+    overflow: visible!important;
+  }
+
+  
+
 @media (max-width: 1200px){
+    .container{
+        overflow: hidden;
+    }
+
     .n-container {
         display: none;
     }
@@ -79,6 +116,15 @@
         position: relative;
         background-color: var(--primary-color);
     }
+
+    .nm-container .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #DDD;
+        margin-bottom: 10px;
+      }
+
     .nm-container>:nth-child(1)
     {
         font-weight: bold;
@@ -101,7 +147,7 @@
         height: calc(100vh - 3.9rem);
     }
 
-    .nm-menu a{
+    .nm-menu span{
         margin-bottom: 2rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid var(--border-color);
@@ -118,4 +164,49 @@
         border-radius: 999px;
         color: var(--dark-bg);
     }
+
+    .m-logout-button{
+        width: 100%;
+        background-color: var(--logout-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 1rem 0rem;
+        border-radius: 999px;
+        color: white;
+    }
+
+    /* Mobile user info styles */
+    .mobile-user-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Adjust as needed */
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+  }
+  
+    .mobile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+  }
+  
+    .mobile-email {
+         color: white;
+    /* Add other styles as needed */
+  }
+  
+    .mobile-menu-item {
+        padding: 10px 0;
+        cursor: pointer;
+        border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Adjust the padding or margin as needed to fit the logout button */
+    .m-funded-button, .mobile-menu-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+  }
 }

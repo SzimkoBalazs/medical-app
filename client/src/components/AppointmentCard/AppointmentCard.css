@@ -1,0 +1,69 @@
+/* AppointmentCard.css */
+.appointment-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To spread out the elements */
+    background-color: #fff;
+    border-radius: 12px; /* Slightly larger radius for a softer look */
+    padding: 24px; /* Increased padding for a larger card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Make it responsive */
+    margin-bottom: 16px; /* Space between cards */
+}
+
+.profile-pic {
+    flex-shrink: 0; /* Prevents the image from shrinking */
+    margin-right: 24px; /* Increased margin */
+}
+
+.profile-pic img {
+    width: 80px; /* Larger image */
+    height: 80px; /* Larger image */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image covers the area */
+}
+
+.appointment-info {
+    flex-grow: 1; /* Allows the info section to fill the space */
+}
+
+.appointment-info .doctor-name {
+    font-size: 1.5em; /* Larger font size */
+    margin: 0;
+    color: #333; /* Darker color for the name */
+}
+
+.appointment-info .appointment-town {
+    font-size: 1.2em;
+    color: #666; /* Gray for the town */
+    margin: 8px 0; /* More space around the town */
+}
+
+.appointment-info .appointment-time {
+    font-size: 1.2em;
+    color: #666;
+    margin: 4px 0 0 0;
+}
+
+  .trash-icon {
+    position: absolute;
+    top: 15px; /* Adjust for proper positioning */
+    right: 15px; /* Adjust for proper positioning */
+    cursor: pointer;
+  }
+
+
+  
+  .trash-icon svg {
+    fill: #757575; /* Icon color */
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+  }
+
+  .trash-icon svg:hover {
+    color: #ec2525; /* Icon color */
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+  }
+  

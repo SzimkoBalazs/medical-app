@@ -23,15 +23,15 @@ const OurDifference = () => {
                          whileInView={"onscreen"}
                          variants={titleVariants}
                          className='title'>
-                        Write something here
+                        Distinctive Care, Innovative Approach
                         </motion.span>
                     <motion.span 
                         initial="offscreen"
                         whileInView={"onscreen"}
                         variants={descriptionVariants}
                         className='text'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil aperiam, animi temporibus quas explicabo cum minima optio laudantium enim, 
-                    <br/>sequi deleniti totam veniam repellendus vitae omnis fuga libero? Quae, ipsum.
+                        At MediVisit, we're redefining patient care with cutting-edge technology and a patient-first philosophy. 
+                    Discover how our unique features set us apart in providing accessible, efficient, and personalized healthcare experiences. 
                     </motion.span>
                 </div>
 

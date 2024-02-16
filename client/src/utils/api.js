@@ -25,13 +25,27 @@ export const api = axios.create({
     }
   };
 
+  export const createBooking = async ( data ) => {
+    let doctorId = data.doctorId
+    let userId = data.userId
+    let date = data.date
+    try {
+      await api.post(
+        `/booking/create`,
+        { doctorId, userId, date }
+        
+      );
+    } catch (error) {
+      toast.error("Something went wrong, Please try again");
+      throw error;
+    }
+  };
+
   
-  export const getUser = async (email, token) => {
-    const response = await api.post('/user/getUser', { email }, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  export const getUser = async (email) => {
+    console.log(email)
+    const response = await api.post('/user/getUser', { email });
+    console.log(response.data)
     return response.data;
   };
 
@@ -48,4 +62,18 @@ export const api = axios.create({
   export const getAllBookingsForADoctor = async (doctorId) => {
     const response = await api.post('/booking/getAllBookingsFromADoctor', { doctorId });
     return response.data;
+  };
+
+  export const getAllBookingsForAUser = async (userId) => {
+    const response = await api.post('/booking/getAllBookingsForAUser', { userId });
+    return response.data;
+  };
+
+  export const softDeleteCar = async (id) => {
+    try {
+      await api.put('/booking/deleteBooking', { id });
+    } catch (error) {
+      toast.error("Something went wrong");
+      throw error;
+    }
   };

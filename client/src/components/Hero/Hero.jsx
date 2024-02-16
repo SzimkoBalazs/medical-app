@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import './Hero.css'
 import EmailBox from '../EmailBox/EmailBox'
 import { HeroData } from '../../utils/data'
 import { motion } from 'framer-motion'
+import { useAuth0 } from '@auth0/auth0-react'
+import { NavLink } from 'react-router-dom'
 
 const Hero = () => {
+
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 1200);
+  const { user, isAuthenticated } = useAuth0();
+
+   useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 1200);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const variants = (delay) => ({
       initial: {
@@ -101,8 +115,19 @@ const Hero = () => {
                  <div className="h-description">
                  Discover a revolutionary way to book your medical appointments from the comfort of your home or anywhere you go.
                  </div>
+              
+                 {isMobileView ? (
+    isAuthenticated ? (
+       <NavLink to='/booking'>
+         <button className="book-button">Book Your Visit</button>
+       </NavLink>
+    ) : (
+      <EmailBox />
+    )
+  ) : (
+    <EmailBox />
+  )}
 
-                 <EmailBox/>
                  </div>
             </div>
         </div>

@@ -4,16 +4,23 @@ import { RxCross2 } from 'react-icons/rx';
 import './Navbar.css'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import ProfileMenu from '../ProfileMenu/ProfileMenu';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const {loginWithRedirect, isAuthenticated, user, logout} = useAuth0();
   const [mobileMenuOpened, setMobileMenuOpened] = useState(false);
+  const [profileMenuVisible, setProfileMenuVisible] = useState(false);
   const [navStyle, setNavStyle] = useState("");
   const { scrollYProgress } = useScroll();
+
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if(latest > 0.2) {
       setNavStyle("sticky");
@@ -21,6 +28,29 @@ const Navbar = () => {
       setNavStyle("");
     }
   })
+
+    const toggleProfileMenu = () => {
+    setProfileMenuVisible(!profileMenuVisible); // Toggle the profile menu visibility
+  };
+
+  const handleLogout = () => {
+    setProfileMenuVisible(false); // Hide the profile menu on logout
+    logout();
+  };
+
+  const handleMenuClick = (path) => {
+    navigate(path);
+    setMobileMenuOpened(false);
+  };
+
+  const handleLinkClick = (to) => {
+    
+    setMobileMenuOpened(false);
+    
+    
+      navigate('/', { state: { scrollTo: to } });
+    
+  };
 
   return (
     <div className={`n-wrapper ${navStyle}`}>
@@ -38,24 +68,24 @@ const Navbar = () => {
                 {/* Right side */}
                 <div className="n-right">
                     <div className="n-menu">
-                       <Link to='wwd-wrapper' spy={true} smooth={true}>
-                       <span>What we do</span>
-                       </Link>
-                       <Link to='hiw-wrapper' spy={true} smooth={true} offset={100}>
-                       <span>How it works</span>
-                       </Link>
-                       <Link to='og-wrapper' spy={true} smooth={true}>
-                       <span>Our Goal</span>
-                       </Link>
-                       <Link to='t-wrapper' spy={true} smooth={true} offset={100}>
-                       <span>Testimonials</span>
-                       </Link>
+                       <span onClick={() => handleLinkClick('wwd-wrapper')}>What we do</span>
+                       <span onClick={() => handleLinkClick('hiw-wrapper')}>How it works</span>
+                       <span onClick={() => handleLinkClick('og-wrapper')}>Our Goal</span>
+                       <span onClick={() => handleLinkClick('t-wrapper')}>Testimonials</span>
                     </div>
                     {
                       !isAuthenticated ?
                     <div className="fund-button cursor-pointer" onClick={loginWithRedirect}>
                         Login
-                    </div> : <ProfileMenu user={user} logout={logout}/>
+                    </div> : <div className="avatar-container" >
+                      <img src={user.picture} alt='Profile Avatar' className="avatar" onClick={toggleProfileMenu}/>
+                      {profileMenuVisible && <ProfileMenu user={user} logout={handleLogout} setProfileMenuVisible={setProfileMenuVisible}/>}
+                      <NavLink to='/booking'>
+                      <div className="fund-button cursor-pointer">
+                        Book
+                    </div>
+                    </NavLink>
+                    </div>
                     }
                 </div>
             </div>
@@ -64,9 +94,9 @@ const Navbar = () => {
          {/* Mobile/Tablet version */}
          <div className="nm-container">
             {/* Logo */}
-            <NavLink to="/">
-            <span>MEDIVISIT</span>
-            </NavLink>
+            
+            <span onClick={() => handleMenuClick('/')}>MEDIVISIT</span>
+            
 
             {/* menu icon */}
              {
@@ -82,24 +112,32 @@ const Navbar = () => {
             <div className="nm-menu"
               style={{transform: mobileMenuOpened && "translateX(0%)"}}
             >
-              <Link onClick={() => setMobileMenuOpened(false)} to='wwd-wrapper' spy={true} smooth={true}>
-                <span>What we do</span>
-              </Link>
-              <Link onClick={() => setMobileMenuOpened(false)} to='hiw-wrapper' spy={true} smooth={true} offset={100}>
-                <span>How it works</span>
-                </Link>
-                <Link onClick={() => setMobileMenuOpened(false)} to='og-wrapper' spy={true} smooth={true}>
-                <span>Our Goal</span>
-                </Link>
-                <Link onClick={() => setMobileMenuOpened(false)} to='t-wrapper' spy={true} smooth={true} offset={100}>
-                <span>Testimonials</span>
-                </Link>
-                {
-                      !isAuthenticated ?
-                    <div className="m-funded-button" onClick={loginWithRedirect}>
-                        Login
-                    </div> : <div onClick={logout}>{user?.email}</div>
-                    }
+                       <span onClick={() => handleLinkClick('wwd-wrapper')}>What we do</span>
+                       <span onClick={() => handleLinkClick('hiw-wrapper')}>How it works</span>
+                       <span onClick={() => handleLinkClick('og-wrapper')}>Our Goal</span>
+                       <span onClick={() => handleLinkClick('t-wrapper')}>Testimonials</span>
+                 {/* Conditional rendering based on authentication */}
+          {isAuthenticated ? (
+            <>
+              {/* User info */}
+              <div className="mobile-user-info">
+                <img src={user.picture} alt="Profile" className="mobile-avatar" />
+                
+              </div>
+              
+              <div onClick={() => handleMenuClick('/myBookings')} className="mobile-menu-item">
+                My Bookings
+              </div>
+             
+             
+              <div className="m-logout-button" onClick={handleLogout}>Logout</div>
+              
+            </>
+          ) : (
+            <div className="m-funded-button" onClick={loginWithRedirect}>
+              Login
+            </div>
+          )}
             </div>
 
          </div>

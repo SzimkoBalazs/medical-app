@@ -1,6 +1,6 @@
 import React from 'react'
 import './OurGoal.css'
-import { whoWeInvest } from '../../utils/data' 
+import { ourGoals } from '../../utils/data' 
 import { motion } from 'framer-motion'
 import { containerVariants, tagVariants, titleVariants } from '../../utils/animation'
 
@@ -18,7 +18,7 @@ const OurGoal = () => {
                            whileInView={"onscreen"}
                            variants={tagVariants} 
                           className='tag'>
-                            Placeholder text
+                            Our Goal
                             </motion.span>
                         <motion.span 
                            initial="offscreen"
@@ -26,14 +26,13 @@ const OurGoal = () => {
                            variants={titleVariants}
                           className='title'>
                             {" "}
-                            Some Placeholder
-                        <br/> and some more text
+                            Envisioning Healthier Tomorrows
                         </motion.span>
                     </div>
 
                     {/* Features */}
                     <div className="og-features">
-                        {whoWeInvest.map((feature, i) => (
+                        {ourGoals.map((feature, i) => (
                             <motion.div 
                             variants={containerVariants(i * 0.05 + 1)}
                             initial="offscreen"
