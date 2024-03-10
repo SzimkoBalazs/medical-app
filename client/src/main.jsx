@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      domain="dev-e6iae7zh4pqxvgbq.us.auth0.com"
      clientId="JDglPh9YSkVy7iZ1uhCIgmbDJnt7MUFi"
      authorizationParams={{
-       redirect_uri: "http://localhost:5173"
+       redirect_uri: "https://medivisit-app-new.vercel.app"
       }}
       audience="http://localhost:8000"
       scope="openid profile email"
@@ -19,3 +19,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Auth0Provider>
   </React.StrictMode>
 )
+
+//localhost:5173
