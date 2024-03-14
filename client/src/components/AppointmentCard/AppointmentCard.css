@@ -9,7 +9,7 @@
   padding: 24px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%; /* ensure the card stretches to the full width of its container */
-  min-height: 120px; /* this ensures that all cards have at least this height */
+  min-height: 260px; /* this ensures that all cards have at least this height */
   margin-bottom: 16px;
 }
 
