@@ -47,7 +47,7 @@ const BookingPage = () => {
 
     if (isLoading || !data) {
         return <div className='booking-wrapper'>
-                 <div className='container'>
+                 <div className='container flex justify-center items-center'>
                   <PuffLoader/>
                  </div>
                </div>; 
