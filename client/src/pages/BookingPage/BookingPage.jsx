@@ -13,6 +13,7 @@ import useBookingsForADoctor from '../../hooks/useBookingsForADoctor';
 import { getUser, createBooking } from '../../utils/api';
 import { toast } from 'react-toastify';
 import HelpCard from '../../components/HelpCard/HelpCard';
+import { PuffLoader } from "react-spinners";
 
 
 const BookingPage = () => {
@@ -45,7 +46,11 @@ const BookingPage = () => {
       }, [user?.email]); 
 
     if (isLoading || !data) {
-        return <div>Loading...</div>; 
+        return <div className='flex justify-center items-center'>
+                 <div className='p-4'>
+                  <PuffLoader/>
+                 </div>
+               </div>; 
       }
 
       const options = data.map(town => ({
@@ -352,7 +357,7 @@ const BookingPage = () => {
                         dateFormat="h:mm aa"
                         
                         placeholderText='Select an hour'
-                        styles={{placeholderTextColor: 'red'}}
+                       
                       /> 
                      </div>
 
