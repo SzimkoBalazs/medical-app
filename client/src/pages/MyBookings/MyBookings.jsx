@@ -6,13 +6,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HelpCard from '../../components/HelpCard/HelpCard';
+import { PuffLoader } from 'react-spinners';
 
 const MyBookings = () => {
 
  const { data: bookings, isLoading, isError, refetch } = useBookingsForAUser();
 
   // Optional: handle loading and error states
-  if (isLoading) return <div>Loading bookings...</div>;
+  if (isLoading) 
+      return <div className='booking-wrapper'>
+                <div className='container flex justify-center items-center'>
+                  <PuffLoader/>
+                </div>
+            </div>;;
   if (isError) return <div>Error fetching bookings.</div>;
 
   console.log(bookings)
